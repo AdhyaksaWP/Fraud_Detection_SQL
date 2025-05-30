@@ -11,7 +11,12 @@ func SetupRoutes(app *fiber.App, db *sql.DB) {
 	api := app.Group("/api")
 
 	userGroup := api.Group("/users")
-	userGroup.Post("/", controllers.InsertUser(db))
 	userGroup.Get("/", controllers.GetAllUser(db))
+	userGroup.Post("/", controllers.InsertUser(db))
 	userGroup.Delete("/:id", controllers.DeleteUser(db))
+
+	cardGroup := api.Group("/cards")
+	cardGroup.Get("/", controllers.GetAllCard(db))
+	cardGroup.Post("/", controllers.InsertCard(db))
+	cardGroup.Delete("/:card_number", controllers.DeleteCard(db))
 }
