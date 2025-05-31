@@ -1,6 +1,9 @@
 # Fraud Detection + Credit Activity API
 
-A RESTful API built with [Fiber](https://gofiber.io/) and Go, designed for managing **users**, **cards**, and **transactions**, with built-in **fraud detection** powered by a Python script. This is a inspired by the project https://github.com/maitree7/Fraud_Detection_SQL 
+A RESTful API built with [Fiber](https://gofiber.io/) and Go, designed for managing **users**, **cards**, and **transactions**, with built-in **fraud detection** powered by a Python script. This project is inspired by [Fraud\_Detection\_SQL](https://github.com/maitree7/Fraud_Detection_SQL). It extends the original idea with the following key components:
+* **Data Modeling**: Designed a database schema to store credit card transaction data and created a PostgreSQL database based on the model.
+* **Data Engineering**: Implemented the database schema and populated the database using provided CSV files.
+* **Data Analysis**: Performed data analysis to detect potential fraudulent transactions.
 
 ---
 
