@@ -8,11 +8,13 @@ import (
 	"os"
 
 	"github.com/gofiber/fiber/v2"
+	_ "github.com/gofiber/fiber/v2/middleware/logger"
 	_ "github.com/jackc/pgx/v5/stdlib"
 	"github.com/joho/godotenv"
 )
 
 func main() {
+
 	// Load dotenv for DB DSN
 	godotenv.Load(".env")
 	dsn := os.Getenv("DB_DSN")
@@ -30,6 +32,9 @@ func main() {
 	fmt.Println("Connected to Postgres!")
 
 	app := fiber.New()
+
+	// For the views
+	app.Static("/", "/views")
 
 	// Pass in the main fiber app and the DB's DSN
 	routes.SetupRoutes(app, db)

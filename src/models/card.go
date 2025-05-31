@@ -8,8 +8,8 @@ import (
 )
 
 type Card struct {
-	ID         int    `json:"id"`
 	CardNumber string `json:"card"`
+	ID         int    `json:"id"`
 }
 
 func generateRandomCardNumber() string {

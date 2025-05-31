@@ -19,4 +19,9 @@ func SetupRoutes(app *fiber.App, db *sql.DB) {
 	cardGroup.Get("/", controllers.GetAllCard(db))
 	cardGroup.Post("/", controllers.InsertCard(db))
 	cardGroup.Delete("/:card_number", controllers.DeleteCard(db))
+
+	transactionGroup := api.Group("/transactions")
+	transactionGroup.Get("/", controllers.GetAllTransactions(db))
+	transactionGroup.Get("/:id", controllers.GetAllTransactionsByMerchantID(db))
+	transactionGroup.Post("/", controllers.CreateTransaction(db))
 }

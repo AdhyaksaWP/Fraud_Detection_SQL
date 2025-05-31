@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Credit Activity API</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Credit Activity API</h1>
+
+  <section>
+    <h2>Users</h2>
+    <button onclick="fetchUsers()">Get All Users</button>
+    <input id="newUserName" placeholder="New User Name" />
+    <button onclick="addUser()">Add User</button>
+    <input id="deleteUserId" placeholder="User ID to Delete" />
+    <button onclick="deleteUser()">Delete User</button>
+    <ul id="usersList"></ul>
+  </section>
+
+  <section>
+    <h2>Cards</h2>
+    <button onclick="fetchCards()">Get All Cards</button>
+    <input id="newCardNumber" placeholder="New Card Number" />
+    <button onclick="addCard()">Add Card</button>
+    <input id="deleteCardNumber" placeholder="Card Number to Delete" />
+    <button onclick="deleteCard()">Delete Card</button>
+    <ul id="cardsList"></ul>
+  </section>
+
+  <section>
+    <h2>Transactions</h2>
+    <button onclick="fetchTransactions()">Get All Transactions</button>
+    <input id="merchantId" placeholder="Merchant ID for Transactions" />
+    <button onclick="fetchTransactionsByMerchant()">Get Transactions by Merchant</button>
+
+    <div>
+      <input id="transactionAmount" placeholder="Amount" type="number" step="0.01"/>
+      <input id="transactionCardNumber" placeholder="Card Number" />
+      <input id="transactionMerchantId" placeholder="Merchant ID" type="number"/>
+      <button onclick="addTransaction()">Add Transaction</button>
+    </div>
+
+    <ul id="transactionsList"></ul>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
